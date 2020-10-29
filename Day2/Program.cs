@@ -100,13 +100,13 @@ namespace Day2
             string b = Console.ReadLine();
             Console.WriteLine("3 reizes ievadi " + a + " punktus");
             int c = 0;
-            for (int i = 0; i <= 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 c += Convert.ToInt32(Console.ReadLine());
             }
             Console.WriteLine("3 reizes ievadi " + b + " punktus");
             int d = 0;
-            for (int i = 0; i <= 3; i++)
+            for (int i = 0; i < 3; i++)
             {
                 d += Convert.ToInt32(Console.ReadLine());
             }
@@ -117,6 +117,8 @@ namespace Day2
             else
             {
                 string cd = (c < d && c > d) ? $"Uzvar spelētājs NR 2." : "Uzvar spēlētājs nr 1.";
+                Console.WriteLine(cd);
+                Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             }
         }
         static void Main(string[] args)
@@ -124,7 +126,7 @@ namespace Day2
             while (true)
             {
                 Console.WriteLine(" ");
-                Console.WriteLine("Ievadiet uzdevuma nr. no 1 -3, vai 99 lai izietu no programmas.");
+                Console.WriteLine("Ievadiet uzdevuma nr. no 1 - 4, vai 99 lai izietu no programmas.");
                 int Task = Convert.ToInt32(Console.ReadLine());
 
                 switch (Task)
