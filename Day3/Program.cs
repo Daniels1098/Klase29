@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
+using System.Xml.Schema;
 
 namespace Day3
 {
@@ -86,8 +89,19 @@ namespace Day3
         {
             Console.WriteLine("*********** TASK 6 ************");
             int[] masivs = new int[7] { 7, 4, 7, 3, 6, 9, 2 };
-            masivs[3] = 10;
-            Console.WriteLine(masivs);
+            foreach (int number in masivs)
+            {
+                Console.Write( number+",");
+
+            }
+            Console.WriteLine("   ");
+            int x = Array.IndexOf(masivs, 3);
+            masivs[x] = 10;
+            foreach (int number in masivs)
+            {
+                Console.Write(masivs+",");
+            }
+            Console.WriteLine(" ");
             Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
         }
         static void Task7()
@@ -111,15 +125,27 @@ namespace Day3
         {
             Console.WriteLine("*********** TASK 9, DIE HARD ************");
             Console.WriteLine("Ievadi skaitli līdz 20 (ieskaitot)");
-            string i = Console.ReadLine();
+            string ievade = Console.ReadLine();
             int j;
-            if (!int.TryParse(i, out j))
+
+            while (!int.TryParse(ievade, out j))
             {
-                Console.WriteLine("Kļuda, mēģini vēl");
-                Convert.ToInt32(Console.ReadLine());
-
-
+                Console.WriteLine("Kļuda, ievadi ciparu!");
+                Console.ReadLine();
             }
+             j = Convert.ToInt32(Console.ReadLine());
+           
+            int i = 1;
+            do
+            {
+                Console.WriteLine( i+"x"+j+"="+(i * j));
+                i++;
+            } while (i <= j && j <= 20);
+            Console.WriteLine("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+        
+    
+                
+            
         }
         static void Main(string[] args)
         {
